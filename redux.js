@@ -15,4 +15,17 @@ function createStore(reducer) {
   }
   return {getState,dispatch,subscribe}
 }
-export {createStore}
+function combineReducers(reducers) {
+  return (state={},action)=>{
+    //默认要返回一个状态
+    let obj={};
+    for(let key in reducers){
+      let reducer=reducers[key];
+      console.log(key,state,state[key]);
+      let s= reducer(state[key],action)
+      obj[key]=s;
+    }
+    return obj;
+  }
+}
+export {createStore,combineReducers}
