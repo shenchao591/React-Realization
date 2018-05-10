@@ -2,3 +2,4 @@
 - ReactDOM.render方法简易实现
 - redux createstore简易版
 - redux combineReducers方法
+- 高阶组件的实现
